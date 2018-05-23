@@ -1,0 +1,35 @@
+\begin{thebibliography}{1}
+
+\bibitem{discretesystems}
+{\sc J.~Ackerman, K.~Ayers, E.~J. Beltran, J.~Bonet, D.~Lu, and T.~Rudelius},
+  {\em A behavioral characterization of discrete time dynamical systems over
+  directed graphs}, Qualitative Theory of Dynamical Systems, 13 (2014),
+  pp.~161--180.
+
+\bibitem{Alongi}
+{\sc J.~Alongi and G.~Nelson}, {\em Recurrence and Topology}, Graduate studies
+  in mathematics, American Mathematical Soc., 2007.
+
+\bibitem{Kliemann}
+{\sc J.~Ayala, P.~Corbin, K.~Mc~Conville, F.~Colonius, W.~Kliemann, and
+  J.~Peters}, {\em Morse decomposition, attractors and chain recurrence},
+  Proyecciones (Antofagasta), 25 (2006), pp.~79--109.
+
+\bibitem{skewproduct}
+{\sc F.~Colonius and W.~Kliemann}, {\em Dynamical Systems and Linear Algebra:},
+  Graduate Studies in Mathematics, American Mathematical Society, 2014.
+
+\bibitem{Katok}
+{\sc A.~Katok and B.~Hasselblatt}, {\em Introduction to the Modern Theory of
+  Dynamical Systems}, Encyclopedia of Mathematics and its Applications,
+  Cambridge University Press, 1997.
+
+\bibitem{Robinson}
+{\sc C.~Robinson}, {\em Dynamical Systems: Stability, Symbolic Dynamics, and
+  Chaos}, CRC Press, 1999.
+
+\bibitem{counterexamples}
+{\sc L.~Steen and J.~Seebach}, {\em Counterexamples in Topology}, Dover Books
+  on Mathematics, Dover Publications, 2013.
+
+\end{thebibliography}
