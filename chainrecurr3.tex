@@ -93,6 +93,41 @@ A dynamical system is a pair $(M, \Phi)$ where $M$ is a metric space, and $\Phi:
 
 \end{defn}
 \indent Consider an directed graph $G=(V,E)$ on $n$ vertices such that each vertex has positive in and out degree and loops are allowed (such a graph will heretofore be referred to as an $N$-graph).  Take a collection of $n$ dynamical systems $\{\phi_1,...,\phi_n\}$ on a compact space $M \subset \mathbb{R}^d$, where each vertex of $G$ corresponds to one dynamical system $\phi_i$.  We would like to study the dynamics that arise when we switch between these dynamical systems on $M$ at regular time intervals in a manner allowed by the directed graph. (That is, at the moment of the switch, we can only go from $\phi_i$ to $\phi_j$ if there is an edge from the vertex corresponding to $\phi_i$ to the vertex corresponding to $\phi_j$, even if $i=j$.) \\
+
+\begin{ex}
+Consider two systems on the unit interval, systems A and B.  In both systems, 0 and 1 are fixed points, but in system A 1 is an attracting fixed point and 0 a repelling fixed point, while in system B, 0 is an attracting fixed point, while 1 is a repelling fixed point.  System A is given by the following ordinary differential equation:
+\begin{equation}\label{systemA}\dot{x}=x(1-x)\end{equation}
+while system B is given by the following ODE:
+\begin{equation}\label{systemB}\dot{x}=-x(1-x).\end{equation}
+Let $G$, the associated graph, be a cycle on two vertices (corresponding to systems A and B).  Equation \ref{systemA} - that is, the ODE associated with system A - is solved by the following function:
+$$\phi_A(t,x)=\frac{-x}{-x-e^t+xe^t}$$
+and Equation \ref{systemB} is solved by the function
+$$\phi_B(t,x)=\frac{xe^t}{1-x+xe^t}$$
+Note then that $\phi_A(t,x)=\phi_B(-t,x)$ for all $t$.  Thus, for all $x\in[0,1]$, 
+\begin{equation}\label{1sys}\varphi_B(1,\varphi_A(1,x))=x.\end{equation}
+Let $f\in\Delta$ be defined as follows:
+\[ f(x) =
+  \begin{cases*}
+    B \quad& if $ n<x<n+1$ for $n$ odd \\
+    A & else \\
+  \end{cases*}\]
+In other words, $f$ is periodic with period 2, and with ``jump discontinuities" at integers.   What $f$ then dictates is the system is guided by system $B$ from time $0$ to $1$, and after one unit of time has passed, it switches to system $A$, for another unit of time.  At time 2, the system switches back to $A$, and so on.  It then follows that
+$$\phi(2,f,x)=x$$
+for all $x\in[0,1]$, and also
+$$\psi(2,f)=f.$$
+(This follows from Equation \ref{1sys}.)   \\
+
+\noindent Figure 1 shows an example trajectory in $[0,1]$ of $\phi(t,f,0.75)$ for $t\in[0,5]$.
+\vspace{5mm}
+
+\begin{figure}[!ht]\label{figure}
+\begin{center}
+\includegraphics[scale=0.45]{oscsys4}
+\caption{The trajectory of 0.75 in the unit interval under $f$}
+\end{center}
+\end{figure}
+\noindent By construction, this trajectory is periodic in $[0,1]$ with period 2, and under $f$, every starting value in $[0,1]$ will similarly have a periodic orbit. Therefore, for every $x\in[0,1]$, there exists an $f\in\Delta$ such that $\Phi(t,f,x)$ is periodic - and thus $(x,f)$ exhibits all kinds of recurrent properties, such as chain recurrence and Poincar\'e recurrence.  This is of note because in systems $A$ and $B$ individually, the only recurrent sets were $\{0\}$ and $\{1\}$.   Thus, when combining these skew product flows, new behavior appears that may not exist in any of the systems when considered individually.  \end{ex}
+
 \indent In order to study the dynamics here, it is important to note that the dynamics on $M$ alone do not constitute a dynamical system as given in Definition \ref{dynsys}.  This is because there is no function $\Phi:\mathbb{R}\times M\rightarrow M$ such that we can consider the pair $(M,\Phi)$ as a dynamical system that give rise to the behavior we wish to study (the behavior after the switch is dependent on which $\phi_j$ we have switched to).  Thus, in order to study the behavior, we turn to the concept of a \emph{skew-product flow}, adapted from the definition of a linear skew-product flow defined in \cite{skewproduct}.
 \begin{defn}\label{skewproduct}
 A skew product flow is a dynamical system $\Phi$ with state space $X=B\times M$ of the form $\Phi=(\psi,\varphi):\mathbb{R}\times B\times M\rightarrow B\times M$, where 
@@ -201,39 +236,6 @@ Thus, $(\Delta\times M,\Phi)$ is a skew-product flow.
 It should not be too hard to see that our system is a skew-product flow, where $X$ as in the definition above corresponds to our space $M$, and $Y$ in the definition above corresponds to $\Delta$.  \\
 \end{comment}
 
-\begin{ex}
-Consider two systems on the unit interval, systems A and B.  In both systems, 0 and 1 are fixed points, but in system A 1 is an attracting fixed point and 0 a repelling fixed point, while in system B, 0 is an attracting fixed point, while 1 is a repelling fixed point.  System A is given by the following ordinary differential equation:
-\begin{equation}\label{systemA}\dot{x}=x(1-x)\end{equation}
-while system B is given by the following ODE:
-\begin{equation}\label{systemB}\dot{x}=-x(1-x).\end{equation}
-Let $G$, the associated graph, be a cycle on two vertices (corresponding to systems A and B).  Equation \ref{systemA} - that is, the ODE associated with system A - is solved by the following function:
-$$\phi_A(t,x)=\frac{-x}{-x-e^t+xe^t}$$
-and Equation \ref{systemB} is solved by the function
-$$\phi_B(t,x)=\frac{xe^t}{1-x+xe^t}$$
-Note then that $\phi_A(t,x)=\phi_B(-t,x)$ for all $t$.  Thus, for all $x\in[0,1]$, 
-\begin{equation}\label{1sys}\varphi_B(1,\varphi_A(1,x))=x.\end{equation}
-Let $f\in\Delta$ be defined as follows:
-\[ f(x) =
-  \begin{cases*}
-    B \quad& if $ n<x<n+1$ for $n$ odd \\
-    A & else \\
-  \end{cases*}\]
-In other words, $f$ is periodic with period 2, and with ``jump discontinuities" at integers.   What $f$ then dictates is the system is guided by system $B$ from time $0$ to $1$, and after one unit of time has passed, it switches to system $A$, for another unit of time.  At time 2, the system switches back to $A$, and so on.  It then follows that
-$$\phi(2,f,x)=x$$
-for all $x\in[0,1]$, and also
-$$\psi(2,f)=f.$$
-(This follows from Equation \ref{1sys}.)   \\
-
-\noindent Figure 1 shows an example trajectory in $[0,1]$ of $\phi(t,f,0.75)$ for $t\in[0,5]$.
-\vspace{5mm}
-
-\begin{figure}[!ht]\label{figure}
-\begin{center}
-\includegraphics[scale=0.45]{oscsys4}
-\caption{The trajectory of 0.75 in the unit interval under $f$}
-\end{center}
-\end{figure}
-\noindent By construction, this trajectory is periodic in $[0,1]$ with period 2, and under $f$, every starting value in $[0,1]$ will similarly have a periodic orbit. Therefore, for every $x\in[0,1]$, there exists an $f\in\Delta$ such that $\Phi(t,f,x)$ is periodic - and thus $(x,f)$ exhibits all kinds of recurrent properties, such as chain recurrence and Poincar\'e recurrence.  This is of note because in systems $A$ and $B$ individually, the only recurrent sets were $\{0\}$ and $\{1\}$.   Thus, when combining these skew product flows, new behavior appears that may not exist in any of the systems when considered individually.  \end{ex}
 
 \indent Now that we have an understanding of the behavior of our system $(\Delta\times M, \Phi)$, we turn to examining some recurrence concepts.  We begin by adapting our understanding of $(\varepsilon,T)$-chains to fit this new situation. 
 
