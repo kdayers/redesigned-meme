@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 JUN 2018 14:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 JUN 2018 15:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -666,12 +666,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 434--437
 
  []
 
-[10] (./chainrecurr3.bbl [11]
-
-Package lineno Warning: Linenumber reference failed, 
-(lineno)                rerun to get it right.
-
-) [12] (./chainrecurr3.aux)
+[10] (./chainrecurr3.bbl [11]) [12] (./chainrecurr3.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -700,7 +695,7 @@ e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
 016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/20
 16/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on chainrecurr3.pdf (12 pages, 283722 bytes).
+Output written on chainrecurr3.pdf (12 pages, 283667 bytes).
 PDF statistics:
  113 PDF objects out of 1000 (max. 8388607)
  80 compressed objects within 1 object stream
