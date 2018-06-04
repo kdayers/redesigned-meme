@@ -83,9 +83,17 @@ This paper examines a continuous time dynamical system that is an extension of a
 
 \section{Deterministic Hybrid Systems}
 
+In this paper, when we refer to a dynamical system, we mean a pair $(M, \Phi)$ satisfying the following definition:
+\begin{defn}\label{dynsys}
+A dynamical system is a pair $(M, \Phi)$ where $M$ is a metric space, and $\Phi:\mathbb{R}\times M\rightarrow M$ such that
+\begin{enumerate}
+\item $\Phi(0,x)=x$ for all $x\in M$, and
+\item $\Phi(t+s,x)=\Phi(t,\Phi(s,x))$ for all $t,s \in \mathbb{R}$ and $x\in M$.
+\end{enumerate}
 
+\end{defn}
 \indent Consider an directed graph $G=(V,E)$ on $n$ vertices such that each vertex has positive in and out degree and loops are allowed (such a graph will heretofore be referred to as an $N$-graph).  Take a collection of $n$ dynamical systems $\{\phi_1,...,\phi_n\}$ on a compact space $M \subset \mathbb{R}^d$, where each vertex of $G$ corresponds to one dynamical system $\phi_i$.  We would like to study the dynamics that arise when we switch between these dynamical systems on $M$ at regular time intervals in a manner allowed by the directed graph. (That is, at the moment of the switch, we can only go from $\phi_i$ to $\phi_j$ if there is an edge from the vertex corresponding to $\phi_i$ to the vertex corresponding to $\phi_j$, even if $i=j$.) \\
-\indent In order to study the dynamics here, it is important to note that the dynamics on $M$ alone do not constitute a dynamical system.  This is because there is no function $\Phi:\mathbb{R}\times M\rightarrow M$ such that we can consider the pair $(M,\Phi)$ as a dynamical system that give rise to the behavior we wish to study (the behavior after the switch is dependent on which $\phi_j$ we have switched to).  Thus, in order to study the behavior, we turn to the concept of a \emph{skew-product flow}, adapted from the definition of a linear skew-product flow defined in \cite{skewproduct}.
+\indent In order to study the dynamics here, it is important to note that the dynamics on $M$ alone do not constitute a dynamical system as given in Definition \ref{dynsys}.  This is because there is no function $\Phi:\mathbb{R}\times M\rightarrow M$ such that we can consider the pair $(M,\Phi)$ as a dynamical system that give rise to the behavior we wish to study (the behavior after the switch is dependent on which $\phi_j$ we have switched to).  Thus, in order to study the behavior, we turn to the concept of a \emph{skew-product flow}, adapted from the definition of a linear skew-product flow defined in \cite{skewproduct}.
 \begin{defn}\label{skewproduct}
 A skew product flow is a dynamical system $\Phi$ with state space $X=B\times M$ of the form $\Phi=(\psi,\varphi):\mathbb{R}\times B\times M\rightarrow B\times M$, where 
 \begin{enumerate}
