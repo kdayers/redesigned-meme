@@ -75,13 +75,16 @@ This paper examines a continuous time dynamical system that is an extension of a
 \section{Introduction}
 \vspace{2mm}
 
+\indent In dynamical systems, a major subject of examination is what happens to systems and particular orbits as time goes to infinity.  Some orbits are very clearly headed in a particular direction - heteroclinic orbits are an example of this.  However, other orbits tend to revisit themselves.  The concept of ``revisiting" is formalized in the notion of recurrence.  There are many different types of recurrence: a few examples are Poincar\'e recurrence (\cite{poincare}), nonwandering points, and central points (see \cite{Alongi} for more information).  In \cite{conley}, Conley introduced a new type of recurrence known as ``chain recurrence."  Chain recurrence is a more general type of recurrence that exhibits many nice properties that we would like to observe in an ideal ``recurrent" set: invariance under flow, closure, and topological invariance, among others (again, see \cite{Alongi} for a more thorough discussion).  When studying recurrence, one objective is to partition the phase space into a set of recurrent points, and a set of points which are not recurrent, each of these sets being invariant with respect to the flow.  In \cite{birkhoff1}, Birkhoff introduced the idea of minimal sets.  Topological transitivity gives another way of partitioning the phase space.  Chain recurrence and chain equivalence also lead to more general type of dynamical partitioning of the space known as chain transitivity.    Chain transitive sets end up being the building blocks of chain recurrence, as the maximal chain transitive sets are the connected components of the set of chain recurrent points. Chain transitive sets also have a relationship with topologically transitive sets, in that every topologically transitive set is also a chain transitive set.  However, in order for chain transitivity to be a well defined notion, we require a ``flow" on our metric space that corresponds to the dynamics.  Without a function to correspond to a single flow, there is no equivalent concept for chain transitivity.
 
-\indent In this paper, we investigate the concept of a finite number of different flows on the same compact metric space, $M$.  $M$ is often taken to be a subset of $\mathbb{R}^n$ endowed with the usual Euclidean metric, but this is not a necessary requirement - indeed, any compact metric space will do.  We examine the behavior of the system if we transition through the different systems at regular intervals over time.  Additionally, we require that the ``switching" between systems follow rules given by a (not necessarily symmetric) adjacency matrix, or equivalently, a directed graph.  Because the different flows on $M$ are not necessarily related in any way, the limit behavior of this system is not obvious.  We attempted to reconcile this problem of ``combining" limit behavior - what happens when a space has multiple different dynamical systems, each with distinct limit sets, acting on it?  How can limit and recurrence - and in particular, chain recurrence - be studied in this context? We begin by demonstrating that $M$ paired with a function space denoted by $\Delta$ together form a skew-product flow, allowing for the examination of certain limiting behavior and recurrence concepts. \\
+
+\indent In this paper, we investigate the concept of a finite number of \emph{different} flows on the same compact metric space, $M$.  $M$ is often taken to be a subset of $\mathbb{R}^n$ endowed with the usual Euclidean metric, but this is not a necessary requirement - indeed, any compact metric space will do.  We examine the behavior of the system if we switch between the different flows at regular intervals over time.  Additionally, we require that the ``switching" between systems follow rules given by a (not necessarily symmetric) adjacency matrix, or equivalently, a directed graph.  Because the different flows on $M$ are not necessarily related in any way, the limit behavior of this system is not obvious, and indeed, there is no single flow.  We attempt to reconcile this problem of ``combining" limit behavior - what happens when a space has multiple different dynamical systems, each with distinct limit sets, acting on it?  How can limit behavior and recurrence - and in particular, chain transitivity - be studied in this context? We begin in Section \ref{DHS} by demonstrating that dynamics on $M$ paired with a function space denoted by $\Delta$ together form a skew-product flow, allowing for the examination of certain limiting behavior and recurrence concepts. 
+
 \indent In \cite{discretesystems}, we studied a discrete dynamical system on a space $\Omega$ which consists of all bi-infinite paths on a directed graph $G$, endowed with a metric.   This space paired with a flow $\varphi$ given by the left shift-mapping (see \cite{Katok}, pp.48) form a discrete dynamical system.  It can then be shown that there exists a finest Morse Decomposition that is nicely correlated with $G$'s structure, and that the Morse sets of this finest decomposition are either a single periodic orbit or chaotic sets.  This system is a generalization of the behavior seen in Smale's horseshoe (see 
 \cite{Robinson}, pp. 275-280).  It is this system $(\Omega, \varphi)$ that we extend to a continuous dynamical system below to line up with the behavior in $M$ to form a skew-product flow.\\
 
 
-\section{Deterministic Hybrid Systems}
+\section{Deterministic Hybrid Systems}\label{DHS}
 
 In this paper, when we refer to a dynamical system, we mean a pair $(M, \Phi)$ satisfying the following definition:
 \begin{defn}\label{dynsys}
@@ -92,9 +95,10 @@ A dynamical system is a pair $(M, \Phi)$ where $M$ is a metric space, and $\Phi:
 \end{enumerate}
 
 \end{defn}
-\indent Consider an directed graph $G=(V,E)$ on $n$ vertices such that each vertex has positive in and out degree and loops are allowed (such a graph will heretofore be referred to as an $N$-graph).  Take a collection of $n$ dynamical systems $\{\phi_1,...,\phi_n\}$ on a compact space $M \subset \mathbb{R}^d$, where each vertex of $G$ corresponds to one dynamical system $\phi_i$.  We would like to study the dynamics that arise when we switch between these dynamical systems on $M$ at regular time intervals in a manner allowed by the directed graph. (That is, at the moment of the switch, we can only go from $\phi_i$ to $\phi_j$ if there is an edge from the vertex corresponding to $\phi_i$ to the vertex corresponding to $\phi_j$, even if $i=j$.) \\
+\noindent If a pair $(M,\Phi)$ satisfies this definition, we also say that $\Phi$ is a \emph{flow} on $M$. \\
+\indent Now consider an directed graph $G=(V,E)$ on $n$ vertices such that each vertex has positive in and out degree and loops are allowed (such a graph will heretofore be referred to as an $N$-graph).  Take a collection of $n$ dynamical systems $\{\phi_1,...,\phi_n\}$ on a compact space $M \subset \mathbb{R}^d$, where each vertex of $G$ corresponds to one dynamical system $\phi_i$.  We would like to study the dynamics that arise when we switch between these dynamical systems on $M$ at regular time intervals in a manner allowed by the directed graph. (That is, at the moment of the switch, we can only go from $\phi_i$ to $\phi_j$ if there is an edge from the vertex corresponding to $\phi_i$ to the vertex corresponding to $\phi_j$, even if $i=j$.)  There are somewhat simple examples of this where the limit behavior of the individual systems does not contain the limit behavior of this new system where switching is allowed.  Consider the following example: \\
 
-\begin{ex}
+\begin{ex}\label{example1}
 Consider two systems on the unit interval, systems A and B.  In both systems, 0 and 1 are fixed points, but in system A 1 is an attracting fixed point and 0 a repelling fixed point, while in system B, 0 is an attracting fixed point, while 1 is a repelling fixed point.  System A is given by the following ordinary differential equation:
 \begin{equation}\label{systemA}\dot{x}=x(1-x)\end{equation}
 while system B is given by the following ODE:
@@ -105,30 +109,24 @@ and Equation \ref{systemB} is solved by the function
 $$\phi_B(t,x)=\frac{xe^t}{1-x+xe^t}$$
 Note then that $\phi_A(t,x)=\phi_B(-t,x)$ for all $t$.  Thus, for all $x\in[0,1]$, 
 \begin{equation}\label{1sys}\varphi_B(1,\varphi_A(1,x))=x.\end{equation}
-Let $f\in\Delta$ be defined as follows:
-\[ f(x) =
+Now imagine we toggle between these two systems at regular time intervals; that is, let $f:\mathbb{R}\rightarrow\{A,B\}$ be defined as follows:
+\[ f(t) =
   \begin{cases*}
     B \quad& if $ n<x<n+1$ for $n$ odd \\
     A & else \\
   \end{cases*}\]
-In other words, $f$ is periodic with period 2, and with ``jump discontinuities" at integers.   What $f$ then dictates is the system is guided by system $B$ from time $0$ to $1$, and after one unit of time has passed, it switches to system $A$, for another unit of time.  At time 2, the system switches back to $A$, and so on.  It then follows that
-$$\phi(2,f,x)=x$$
-for all $x\in[0,1]$, and also
-$$\psi(2,f)=f.$$
-(This follows from Equation \ref{1sys}.)   \\
-
-\noindent Figure 1 shows an example trajectory in $[0,1]$ of $\phi(t,f,0.75)$ for $t\in[0,5]$.
-\vspace{5mm}
-
+Then, $f(t)$ gives the direction of the flow at time $t$.  Note that $f$ is a periodic function with period 2, and with ``jump discontinuities" at integer valued inputs.   What $f$ then dictates is the system is guided by system $B$ from time $0$ to $1$, and after one unit of time has passed, it switches to system $A$, for another unit of time.  At time 2, the system switches back to $A$, and so on. Thus, from Equation \ref{1sys}, this dynamic is periodic with period 2 for all $x\in[0,1]$.
+Figure 1 shows an example trajectory in $[0,1]$ of $\phi(t,f,0.75)$ for $t\in[0,5]$.
 \begin{figure}[!ht]\label{figure}
 \begin{center}
 \includegraphics[scale=0.45]{oscsys4}
 \caption{The trajectory of 0.75 in the unit interval under $f$}
 \end{center}
 \end{figure}
-\noindent By construction, this trajectory is periodic in $[0,1]$ with period 2, and under $f$, every starting value in $[0,1]$ will similarly have a periodic orbit. Therefore, for every $x\in[0,1]$, there exists an $f\in\Delta$ such that $\Phi(t,f,x)$ is periodic - and thus $(x,f)$ exhibits all kinds of recurrent properties, such as chain recurrence and Poincar\'e recurrence.  This is of note because in systems $A$ and $B$ individually, the only recurrent sets were $\{0\}$ and $\{1\}$.   Thus, when combining these skew product flows, new behavior appears that may not exist in any of the systems when considered individually.  \end{ex}
 
-\indent In order to study the dynamics here, it is important to note that the dynamics on $M$ alone do not constitute a dynamical system as given in Definition \ref{dynsys}.  This is because there is no function $\Phi:\mathbb{R}\times M\rightarrow M$ such that we can consider the pair $(M,\Phi)$ as a dynamical system that give rise to the behavior we wish to study (the behavior after the switch is dependent on which $\phi_j$ we have switched to).  Thus, in order to study the behavior, we turn to the concept of a \emph{skew-product flow}, adapted from the definition of a linear skew-product flow defined in \cite{skewproduct}.
+By construction, this trajectory is periodic in $[0,1]$ with period 2, and via these dynamics dictated by $f$, every starting value in $[0,1]$ will similarly have a periodic orbit. Thus, this pair $x\in[0,1]$ along with the function $f$ that dictates when system $A$ is ``in control" and when system B is ``in control" gives rise to periodicity, which is not seen in the two systems individually.   We see then, when combining the systems, new behavior appears that may not exist in any of the systems when considered individually.  \end{ex}
+
+\indent In order to study the dynamics here, it is important to note that the dynamics on $M$ alone do not constitute a dynamical system as given in Definition \ref{dynsys}.  This is because there is no function $\Phi:\mathbb{R}\times M\rightarrow M$ such that we can consider the pair $(M,\Phi)$ as a dynamical system that give rise to the behavior we wish to study (the behavior after the switch is dependent on which $\phi_j$ we have switched to).  However, we are able to determine dynamics when given a function $f:\mathbb{R}\rightarrow\{1,2,\ldots,n\}$ that specifies which system is in control at which time, as seen in Example \ref{example1}. Thus, in order to study the behavior, we turn to the concept of a \emph{skew-product flow}, adapted from the definition of a linear skew-product flow defined in \cite{skewproduct}.
 \begin{defn}\label{skewproduct}
 A skew product flow is a dynamical system $\Phi$ with state space $X=B\times M$ of the form $\Phi=(\psi,\varphi):\mathbb{R}\times B\times M\rightarrow B\times M$, where 
 \begin{enumerate}
@@ -143,8 +141,10 @@ A skew product flow is a dynamical system $\Phi$ with state space $X=B\times M$ 
 &=&\Phi(t,\psi(s,b),\varphi(s,b,m))\\
 &=&\Phi(t,\Phi(s,b,m))
 \end{eqnarray*}
-that $(B\times M, \Phi)$ comprises a dynamical system.  Thus, we can discuss limit sets and recurrence concepts in this concepts, and in particular, we can study chain recurrent sets of $B\times M$. \\
-\indent We plan to study these switching hybrid systems by configuring them into skew-product flows.  In \cite{Ayers2013}, we introduced a space $\Delta$ that is a subset of the functions mapping $\mathbb{R}$ into the set $\{1,\ldots,n\}$ that are piecewise constant on intervals of length 1. We further required that the bi-infinite sequence $$\{f(i)\}_{i=-\infty}^\infty$$ be a bi-infinite path on $G$.  We then introduced a metric on this set, and demonstrated that this space is compact with respect to the topology induced by the metric.  We further analyzed the dynamics on this space given by the left shift mapping:
+that $(B\times M, \Phi)$ comprises a dynamical system as given in Definition \ref{dynsys}.  Thus, we can discuss limit sets and recurrence concepts in this concepts, and in particular, we can study chain recurrent sets of $B\times M$. \\
+\indent We plan to study these switching hybrid systems by configuring them into skew-product flows.  In \cite{Ayers2013}, we introduced a space $\Delta$ that is a subset of the functions mapping $\mathbb{R}$ into the set $\{1,\ldots,n\}$ that are piecewise constant on intervals of length 1. We further required that the bi-infinite sequence 
+$$\{f(i)\}_{i\in\mathbb{Z}}$$ 
+be a bi-infinite path on $G$.  We then introduced a metric on this set, and demonstrated that this space is compact with respect to the topology induced by the metric.  We further analyzed the dynamics on this space given by the left shift mapping:
 $$\psi:\mathbb{R}\times\Delta\rightarrow\Delta,\,\, f(\cdot)\mapsto f(\cdot+ t)$$
 We can now consider a skew product flow on the space $\Delta\times M$.  For $f \in \Delta$, let $0\leq a_f<1$ be such that $f$ only has jump discontinuities at values congruent to $a_f\mod 1$.  Then let $\varphi(t,f,x):\mathbb{R} \times \Delta\times M \rightarrow M$ be defined by
 \begin{equation}\label{varphi}
@@ -236,11 +236,41 @@ Thus, $(\Delta\times M,\Phi)$ is a skew-product flow.
 It should not be too hard to see that our system is a skew-product flow, where $X$ as in the definition above corresponds to our space $M$, and $Y$ in the definition above corresponds to $\Delta$.  \\
 \end{comment}
 
+\section{Chain Transitivity, Chain Recurrence, and Chain Sets}
+\indent Now that we have an understanding of the behavior of our system $(\Delta\times M, \Phi)$, we turn to examining some recurrence concepts having to do with $(\varepsilon,T)-$chains.  The traditional definition of an $(\varepsilon,T)-$chain, as used in the context of flows, is as follows:
+\begin{defn}\label{etchain}
+Let $\phi^t$ be a flow on a metric space $(X,d)$.  Given $\varepsilon>0$, $T>0$, and $x,y\in X$, an $(\varepsilon,T)-$chain from $x$ to $y$ with respect to $\phi^t$ and $d$ is a pair of finite sequences $x=x_0,x_1,\ldots,x_{n-1},x_n=y$ in $X$ and $t_0,\ldots,t_{n-1}$ in $[T,\infty)$, denoted together by $(x_0,\ldots,x_n;t_0,\ldots,t_{n-1})$ such that 
+$$d(\phi^{t_i}(x_i),x_{i+1})<\varepsilon$$
+for $i=0,1,2,\ldots,n-1$.  \cite{Alongi}
+\end{defn}  
+In the case where we have a \emph{flow} (see Definition \ref{dynsys}) on a metric space, we can use Definition \ref{etchain} to discuss a type of recurrence called chain recurrence.
+\begin{defn}
+Let $\phi^t$ be a flow on a metric space $(X,d)$.  The forward chain limit set of $x\in X$ with respect to $\phi^t$ and $d$ is the set
+$$\Omega^+(x)=\bigcap_{\varepsilon,T>0}\{y\in X | \exists \text{ an }(\varepsilon,T)\text{-chain from }x\text{ to }y\text{ with respect to }\phi^t\}.$$
+\end{defn}
+\begin{defn}
+Let $\phi^t$ be a flow on a metric space $(X,d)$. Two points $x,y\in X$ are chain equivalent with respect to $\phi^t$ and $d$ if $y\in\Omega^+(x)$ and $x\in\Omega^+(y)$. \cite{Alongi}
+\end{defn}
 
-\indent Now that we have an understanding of the behavior of our system $(\Delta\times M, \Phi)$, we turn to examining some recurrence concepts.  We begin by adapting our understanding of $(\varepsilon,T)$-chains to fit this new situation. 
+\begin{defn}
+Let $\phi^t$ be a flow on a metric space $(X,d)$.  A point $x\in X$ is called chain recurrent with respect to $\phi^t$ and $d$ if $x$ is chain equivalent to itself. \cite{Alongi}
+\end{defn}
+
+\begin{defn}\label{chaintrans}
+Let $\phi^t$ be a flow on a metric space $(X,d)$.  A set $A\subseteq X$ is chain transitive with respect to $\phi^t$ if $A$ is a nonempty, closed, invariant set with respect to $\phi^t$ such that for each $x,y\in A$, the pair $x,y$ is chain equivalent. \cite{Alongi}
+\end{defn}
+\noindent By making the choice $y=x$ in Definition \ref{chaintrans}, we can see that every element of a chain transitive set is also chain recurrent.  In fact,
+
+\begin{thm}\label{chaincom}
+The maximal chain transitive sets of a flow on a compact metric space are the connected components of the chain recurrent set of the flow
+\end{thm}
+\noindent A proof of Theorem \ref{chaincom} can be found in \cite{Alongi}, pp. 116-118.\\
+
+\indent Note that the above definitions all require a \emph{flow} on a metric space; however, our dynamics on $M$ do not constitute a flow, and therefore we can not apply these definitions.  Our goal, then, is to adapt the above definition for this case, and examine the consequences.  We begin by adapting our definition of chain transitive sets, to new idea, known as chain sets:
 
 
 \begin{defn} \label{chain set} A set $E\subset M$ is called a chain set of a system if 
+
 \begin{enumerate}
 \item for all $x\in E$ there exists $f\in\Delta$ such that $\varphi(t,f,x)\in E$ for all $t\in\mathbb{R}$, and\\
 \item for all $x,y\in E$ and for all $\varepsilon,T>0$ there exist $n\in\mathbb{N}$, $x_0,\ldots,x_n\in M$, $f_0,\ldots,f_{n-1}\in\Delta$ and $t_0,\ldots,t_{n-1}\geq T$ with $x_0=x$, $x_n=y$, and 
@@ -248,8 +278,7 @@ $$d(\varphi(t_j,x_j,f_j),x_{j+1})\leq\varepsilon\mbox{ for all }j=0,\ldots,n-1.$
 \end{enumerate}
 Such a sequence is called an $(\varepsilon,T)$-chain from $x$ to $y$. We also require that a chain set $E$ be maximal with respect to these conditions.
 \end{defn}
-If there exists a $(\varepsilon,T)$-chain from $x$ to $y$ and from $y$ to $x$ for all $\varepsilon, T>0$, we say that $x$ and $y$ are chain equivalent.\\
-\indent It is important to note that chain sets as defined are distinct from the usual chain recurrent components seen in dynamical systems.  This is because the behavior on $M$ is not, in and of itself, a dynamical system, and thus the concept of chain recurrence is not applicable here.  However, in Lemmas \ref{chaindisjoint}, \ref{compact},  and \ref{chainconnected}, we do demonstrate that chain sets, when considered as maximal components, exhibit nice properties that we would expect of sets that demonstrate some type of recurrence. 
+\indent It is important to note that chain sets as defined are distinct from the usual chain transitive sets as defined in Definition \ref{chaintrans}.  This is because the behavior on $M$ is not a flow, and thus the concept of chain transitivity is not applicable here.  However, in Lemmas \ref{chaindisjoint}, \ref{compact},  and \ref{chainconnected}, we do demonstrate that chain sets, when considered as maximal components, exhibit nice properties that we would expect of sets that demonstrate some type of recurrence. 
 
 
 \begin{lem}\label{chaindisjoint}
@@ -279,7 +308,7 @@ Let $E$ be a chain set and let $A,B$ be open sets such that $E\subset A\cup B$ a
 
 \end{proof}
 
-Note that the above lemma does not demonstrate that chain sets are necessarily path connected; indeed, the following is an example of a chain set which is not path connected. 
+\noindent Note that the above lemma does not demonstrate that chain sets are necessarily path connected; indeed, the following is an example of a chain set which is not path connected. 
 
 \begin{ex}
 Let $G$, the graph governing $\Delta$, be the complete graph on 2 vertices, and let $M=\{(x,f(x))| x\in(0,1/2\pi], f(x)=\sin(1/x)\}\cup\{0\}\times[-1,1]$, otherwise known as the Topologist's Sine Curve.   Let the two systems defined on $M$ be given by the following differential equations:
@@ -294,8 +323,24 @@ It is well known that M, the Topologist's Sine Curve, is a set that is connected
 \end{ex}
 \noindent Thus, while chain sets are always connected, they may not exhibit path connectivity.  \\
 
-\indent It is important to remember that chain sets are not the usual chain transitive sets.
-This is because we can not consider the behavior on $M$ alone as a flow; it is dependent on orbits in $\Delta$. The following example further demonstrates why these concepts are not the same.
+\indent Since a chain set $E$ is a subset of $M$, it helps to have an extension of it to a set contained in $\Delta\times M$. 
+
+\begin{defn}
+Given $E\subset M$, the lift of $E$ to $\Delta\times M$ is given by
+$$\ell(E)=\{(f,x)\in \Delta\times M,\Phi(t,f,x)\in E \text{ for all }t\in\mathbb{R}\}.$$
+\end{defn}
+
+\begin{defn}
+A set $A\subset M$ is said to be invariant if for all $x\in A$, $\varphi(t,f,x)\in A$ for all $t\in\mathbb{R}$ and $f\in\Delta$.
+A set $A\subset M$ is said to be forward invariant if for all $x\in A$, $\varphi(t,f,x,)\in A$ for all $t\in \mathbb{R}^+$ and $f\in\Delta$.  Similarly, a set $A\subset M$ is said to be backward invariant if for all $x\in A$, $\varphi(t,f,x,)\in A$ for all $t\in \mathbb{R}^-$ and $f\in\Delta$.
+\end{defn}
+
+
+\begin{remark}
+Notice that if $E$ is invariant, $\ell(E)=\Delta\times E$. 
+\end{remark}
+
+\indent It is important to remember that chain sets are not the usual chain transitive sets. This is because we can not consider the behavior on $M$ alone as a flow; it is dependent on orbits in $\Delta$. The following example further demonstrates why the concepts of a chain set and a chain transitive set are not the same.
 
 \begin{ex}
 Consider the system where $\Delta$ is given by the complete graph on two vertices labeled $A$ and $B$, and $M=[0,2]$.  Let the system corresponding to vertex $A$ be given by the differential equation:
@@ -315,26 +360,9 @@ Therefore, the sequence $y, \varphi(T',g,y),a_N,z$ forms an $(\varepsilon,T)-$ch
 \end{ex}
 
 The above example illustrates that ($\varepsilon,1$)-chain sets are like having the complete graph (see Lemma \ref{complete graph}); that is, if $\mathcal{E}\subset \Delta\times M$ is a maximal invariant chain transitive set, then $\mathcal{E}=\ell(\pi_M\mathcal{E})$, and $\pi_M\mathcal{E}$ is a chain set for all $T$ (see Theorem \ref{max chain set}).\\
-\indent Thus, we see that the relationship between chain sets, subsets of $M$, and chain transitive sets, subsets of $\Delta\times M$, is rather complicated. As of right now, there is no general theory about the relationship between the two concepts.  Above we have explored certain examples of relationships, but future work may entail coming up with a more general result that relates the two.  In addition, concepts such as Poincar\'e recurrence and nonwandering sets could be explored within this context.  
+\indent Thus, we see that the relationship between chain sets, subsets of $M$, and chain transitive sets, subsets of $\Delta\times M$, is rather complicated. As of right now, there is no general theory about the relationship between the two concepts.  Above we have explored certain examples of relationships, but future work may entail coming up with a more general result that relates the two.  In addition, concepts such as Poincar\'e recurrence and nonwandering sets could be explored within this context.  \\
 
-\indent Since a chain set $E$ is a subset of $M$, it helps to have an extension of it to a set contained in $\Delta\times M$. 
-
-\begin{defn}
-Given $E\subset M$, the lift of $E$ to $\Delta\times M$ is given by
-$$\ell(E)=\{(f,x)\in \Delta\times M,\Phi(t,f,x)\in E \text{ for all }t\in\mathbb{R}\}.$$
-\end{defn}
-
-\begin{defn}
-A set $A\subset M$ is said to be invariant if for all $x\in A$, $\varphi(t,f,x)\in A$ for all $t\in\mathbb{R}$ and $f\in\Delta$.
-A set $A\subset M$ is said to be forward invariant if for all $x\in A$, $\varphi(t,f,x,)\in A$ for all $t\in \mathbb{R}^+$ and $f\in\Delta$.  Similarly, a set $A\subset M$ is said to be backward invariant if for all $x\in A$, $\varphi(t,f,x,)\in A$ for all $t\in \mathbb{R}^-$ and $f\in\Delta$.
-\end{defn}
-
-
-\begin{remark}
-Notice that if $E$ is invariant, $\ell(E)=\Delta\times E$. 
-\end{remark}
-
-Since $(\Delta\times M,\Phi)$ is a dynamical system on a compact set, it has chain transitive sets.  We would like to make connections between a chain transitive set contained in $\Delta\times M$ and a chain set that is a subset of $M$.  The following results relate the ideas of chain transitive sets, chain sets, projections, and lifts, and what properties are retained when projecting onto $M$ or lifting to $\Delta\times M$. 
+Since $\Phi$ is a flow on the compact set $\Delta\times M$, $\Delta\times M$ contains chain transitive sets.  We would like to make connections between a chain transitive set that is a subset of $\Delta\times M$ and a chain set that is a subset of $M$.  One way to map sets in $\Delta\times M$ to sets in $M$ is via the usual projection map; a way to map sets in $M$ to sets in $\Delta\times M$ is via lifts.  The following results relate the ideas of chain transitive sets, chain sets, projections, and lifts, and what properties are retained when projecting onto $M$ or lifting to $\Delta\times M$. 
 
 
 \begin{thm}\label{max chain set}

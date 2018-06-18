@@ -61,6 +61,8 @@
 
 %matrix macro
 \def\mtx#1{\begin{bmatrix} #1 \end{bmatrix}}
+
+
 \title{Chain Recurrence in Graph Determined Hybrid Systems}
 \author{Kimberly Ayers}
 \date{}
@@ -173,7 +175,7 @@ Thus, $(\Delta\times M,\Phi)$ is a skew-product flow.
 
 
 
-\indent This definition of $\varphi$, however, is rather unintuitive, bulky, and notationally annoying.  It is easier to consider a less rigorous description of the system.  Consider $(f,x)\in \Delta\times M.$  We first consider the dynamical system dictated by $f(0)$; that is, as time moves forward, the orbit of $x$ is given by that dictated by the dynamical system corresponding to $\psi(f,t)(0)$.  Recall that $\psi$ simply shifts the function $f$ to the right.  If the function changes values, there is an instantaneous switch in which dynamical system is dictating the orbit of $x$.  Because of the instantaneous change, this could then result in a non-smooth orbit.  This continues, with a possible change in dynamical system on $M$ occurring after a time interval of length $1$. This can be further understood via the following commuting diagram (where $\pi_1$ and $\pi_2$ are the usual projection mappings):
+\indent This definition of $\varphi$, however, is rather unintuitive, bulky, and notationally annoying.  It is easier to consider a less rigorous definition of the system.  Consider $(f,x)\in \Delta\times M.$  We first consider the dynamical system dictated by $f(0)$; that is, as time moves forward, the orbit of $x$ is given by that dictated by the dynamical system corresponding to $\psi(f,t)(0)$.  Recall that $\psi$ simply shifts the function $f$ to the right.  If the function changes values, there is an instantaneous switch in which dynamical system is dictating the orbit of $x$.  Because of the instantaneous change, this could then result in a non-smooth orbit.  This continues, with a possible change in dynamical system on $M$ occurring after a time interval of length $1$. This can be further understood via the following commuting diagram (where $\pi_1$ and $\pi_2$ are the usual projection mappings):
 \begin{center}
 \begin{tikzcd}
 \mathbb{R}\times \Delta\times M \arrow[r,"\Phi"] \arrow[d,"\pi_1"]
@@ -198,33 +200,13 @@ Consider two systems on the unit interval, systems A and B.  In both systems, 0 
 while system B is given by the following ODE:
 \begin{equation}\label{systemB}\dot{x}=-x(1-x).\end{equation}
 Let $G$, the associated graph, be a cycle on two vertices (corresponding to systems A and B).  Equation \ref{systemA} - that is, the ODE associated with system A - is solved by the following function:
-$$\phi_A(t,x)=\frac{-x}{-x-e^t+xe^t}$$
-and Equation \ref{systemB} is solved by the function
-$$\phi_B(t,x)=\frac{xe^t}{1-x+xe^t}$$
-Note then that $\phi_A(t,x)=\phi_B(-t,x)$ for all $t$.  Thus, for all $x\in[0,1]$, 
-\begin{equation}\label{1sys}\varphi_B(1,\varphi_A(1,x))=x.\end{equation}
-Let $f\in\Delta$ be defined as follows:
-\[ f(x) =
-  \begin{cases*}
-    B \quad& if $ n<x<n+1$ for $n$ odd \\
-    A & else \\
-  \end{cases*}\]
-In other words, $f$ is periodic with period 2, and with ``jump discontinuities" at integers.   What $f$ then dictates is the system is guided by system $B$ from time $0$ to $1$, and after one unit of time has passed, it switches to system $A$, for another unit of time.  At time 2, the system switches back to $A$, and so on.  It then follows that
-$$\phi(2,f,x)=x$$
-for all $x\in[0,1]$, and also
-$$\psi(2,f)=f.$$
-(This follows from Equation \ref{1sys}.)   \\
+$$\varphi_A(t,x)=\frac{-x}{-x-e^t+xe^t}$$
+and Equation is solved by the function
+$$\varphi_B(t,x)=\frac{xe^t}{1-x+xe^t}$$
+Note then that $\varphi_A(t,x)=\varphi_B(-t,x)$.  Thus, for all $x\in[0,1]$, 
+$$\varphi_B(1,\varphi_A(1,x))=x.$$
 
-\noindent Figure 1 shows an example trajectory in $[0,1]$ of $\phi(t,f,0.75)$ for $t\in[0,5]$.
-\vspace{5mm}
-
-\begin{figure}[!ht]\label{figure}
-\begin{center}
-\includegraphics[scale=0.45]{oscsys4}
-\caption{The trajectory of 0.75 in the unit interval under $f$}
-\end{center}
-\end{figure}
-\noindent By construction, this trajectory is periodic in $[0,1]$ with period 2, and under $f$, every starting value in $[0,1]$ will similarly have a periodic orbit. Therefore, for every $x\in[0,1]$, there exists an $f\in\Delta$ such that $\Phi(t,f,x)$ is periodic - and thus $(x,f)$ exhibits all kinds of recurrent properties, such as chain recurrence and Poincar\'e recurrence.  This is of note because in systems $A$ and $B$ individually, the only recurrent sets were $\{0\}$ and $\{1\}$.   Thus, when combining these skew product flows, new behavior appears that may not exist in any of the systems when considered individually.  \end{ex}
+\end{ex}
 
 \indent Now that we have an understanding of the behavior of our system $(\Delta\times M, \Phi)$, we turn to examining some recurrence concepts.  We begin by adapting our understanding of $(\varepsilon,T)$-chains to fit this new situation. 
 
