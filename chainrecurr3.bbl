@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 \begin{thebibliography}{10}
-=======
-\begin{thebibliography}{1}
->>>>>>> 8371eef82b8ac0e13004187fb42676c96afec1e3
 
 \bibitem{discretesystems}
 {\sc J.~Ackerman, K.~Ayers, E.~J. Beltran, J.~Bonet, D.~Lu, and T.~Rudelius},
@@ -12,48 +8,35 @@
 
 \bibitem{Alongi}
 {\sc J.~Alongi and G.~Nelson}, {\em Recurrence and Topology}, Graduate studies
-<<<<<<< HEAD
   in mathematics, American Mathematical Society, 2007.
-=======
-  in mathematics, American Mathematical Soc., 2007.
->>>>>>> 8371eef82b8ac0e13004187fb42676c96afec1e3
 
 \bibitem{Ayers2013}
 {\sc K.~Ayers, X.~Garcia, J.~Kunze, T.~Rudelius, A.~Sanchez, S.~Shao, and
   E.~Speranza}, {\em Limit and morse sets for deterministic hybrid systems},
   Qualitative Theory of Dynamical Systems, 12 (2013), pp.~335--360.
 
-<<<<<<< HEAD
 \bibitem{birkhoff1}
 {\sc G.~Birkhoff}, {\em Quelque th{\'e}or{\`e}ms sur le movement des
   syst{\`e}ms dynamiques}, Bulletin de la Soci{\'e}t{\'e} Math{\'e}matique de
   France, 40 (1912), pp.~305--323.
 
-=======
->>>>>>> 8371eef82b8ac0e13004187fb42676c96afec1e3
 \bibitem{skewproduct}
 {\sc F.~Colonius and W.~Kliemann}, {\em Dynamical Systems and Linear Algebra:},
   Graduate Studies in Mathematics, American Mathematical Society, 2014.
 
-<<<<<<< HEAD
 \bibitem{conley}
 {\sc C.~Conley}, {\em Isolated Invariant Sets and the Morse Index}, American
   Mathematical Society, 1978.
 
-=======
->>>>>>> 8371eef82b8ac0e13004187fb42676c96afec1e3
 \bibitem{Katok}
 {\sc A.~Katok and B.~Hasselblatt}, {\em Introduction to the Modern Theory of
   Dynamical Systems}, Encyclopedia of Mathematics and its Applications,
   Cambridge University Press, 1997.
 
-<<<<<<< HEAD
 \bibitem{poincare}
 {\sc H.~Poincar{\'e}}, {\em Les m{\'e}thodes nouvelles de la m{\'e}canique
   c{\'e}leste Vols. 1-3}, Gautier-Villars, 1892.
 
-=======
->>>>>>> 8371eef82b8ac0e13004187fb42676c96afec1e3
 \bibitem{Robinson}
 {\sc C.~Robinson}, {\em Dynamical Systems: Stability, Symbolic Dynamics, and
   Chaos}, CRC Press, 1999.
